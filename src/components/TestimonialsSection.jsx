@@ -1,11 +1,16 @@
 import TestimonialCard from "./TestimonialCard";
 
-import Umesh from "../assets/testimonials/Umesh.jpg";
+// import Umesh from "../assets/testimonials/Umesh.jpg";
+import Umesh from "../assets/testimonials/trans1.jpg";
 import soyel from "../assets/testimonials/Soyel.jpg";
 import rahul from "../assets/testimonials/Rahul.jpg";
 import sunny from "../assets/testimonials/Sunny.jpg";
-import manoj from "../assets/testimonials/Manoj.jpg";
-import hamid from "../assets/testimonials/Hamid.jpg";
+// import manoj from "../assets/testimonials/Manoj.jpg";
+// import hamid from "../assets/testimonials/Hamid.jpg";
+import hamid from "../assets/testimonials/trans6.jpg";
+
+import manoj from "../assets/testimonials/trans5.jpg";
+
 
 export default function TestimonialsSection() {
     const testimonials = [
@@ -50,6 +55,7 @@ export default function TestimonialsSection() {
             result: "Lost 17 kgs in 4 months",
             img: hamid,
             watermark: "@HEALTHYNATION",
+            imgPos: "md:object-right"
         },
     ];
 

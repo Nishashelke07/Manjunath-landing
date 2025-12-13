@@ -61,11 +61,12 @@ export default function OfferSection() {
           <div className="relative p-6 sm:p-10">
             {/* Header */}
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.22em] text-orange-700 shadow-sm">
-                WHAT YOU GET
-                <span className="h-1 w-1 rounded-full bg-orange-500" />
-                12-WEEK BLUEPRINT
+              <div className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-orange-200 bg-white/70 px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold tracking-[0.18em] sm:tracking-[0.22em] text-orange-700 shadow-sm">
+                <span className="shrink-0">WHAT YOU GET</span>
+                <span className="shrink-0 h-1 w-1 rounded-full bg-orange-500" />
+                <span className="shrink-0">12-WEEK PLAN</span>
               </div>
+
 
               <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
                 Why{" "}
@@ -93,24 +94,28 @@ export default function OfferSection() {
               {/* Big roadmap card */}
               <div className="col-span-12 lg:col-span-5">
                 <div className="relative h-full rounded-3xl border border-gray-100 bg-white/80 p-6 sm:p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-semibold tracking-[0.18em] text-gray-500">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] text-gray-500">
                         THE ROADMAP
                       </p>
-                      <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-gray-900 leading-snug">
-                        Your 12-Week{" "}
-                        <span className="text-orange-600">Fat-to-Fit</span>{" "}
-                        Journey
+
+                      <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 leading-snug">
+                        <span className="whitespace-nowrap sm:whitespace-normal">
+                          Your 12-Week <span className="text-orange-600">Fat-to-Fit</span>
+                        </span>
+                        <span className="block sm:inline"> Journey</span>
                       </h3>
                     </div>
 
-                    <div className="shrink-0 rounded-2xl border border-orange-200 bg-orange-50 px-3 py-2">
-                      <p className="text-xs font-semibold text-orange-700">
+                    <div className="shrink-0 self-start rounded-2xl border border-orange-200 bg-orange-50 px-3 py-2">
+                      <p className="text-xs font-semibold text-orange-700 whitespace-nowrap">
                         Weekly structure
                       </p>
                     </div>
                   </div>
+
+
 
                   <div className="mt-6 space-y-3">
                     {phases.map((p) => (

@@ -10,18 +10,19 @@ export default function PromiseSection() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-linear-to-b from-orange-50 via-white to-white shadow-sm">
           {/* subtle pattern */}
-          <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#111827_1px,transparent_1px)] [background-size:18px_18px]" />
+          <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-radial-gradient(#111827_1px,transparent_1px) bg-size:18px_18px" />
 
           <div className="relative p-6 sm:p-10">
             {/* Top row */}
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               {/* Left: label + headline */}
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.22em] text-orange-700 shadow-sm">
-                  OUR PROMISE
-                  <span className="h-1 w-1 rounded-full bg-orange-500" />
-                  GOAL-BASED COACHING
+                <div className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-orange-200 bg-white/70 px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold tracking-[0.18em] sm:tracking-[0.22em] text-orange-700 shadow-sm">
+                  <span className="shrink-0">OUR PROMISE</span>
+                  <span className="shrink-0 h-1 w-1 rounded-full bg-orange-500" />
+                  <span className="shrink-0">GOAL-BASED COACHING</span>
                 </div>
+
 
                 <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
                   We coach you until you hit your goal —{" "}
