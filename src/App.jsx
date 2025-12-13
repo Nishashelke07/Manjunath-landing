@@ -9,6 +9,7 @@ import MeetYourMentor from "./components/MeetYourMentor";
 import OfferSection from "./components/OfferSection";
 import PromiseSection from "./components/PromiseSection";
 import StickyBar from "./components/StickyBar";
+import TestimonialsSection from "./components/TestimonialsSection";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
         <Hero />
         <VideoSection />
         <CallToActionButton />
+        <TestimonialsSection />
         <MeetYourMentor />
         <OfferSection />
         <PromiseSection />
