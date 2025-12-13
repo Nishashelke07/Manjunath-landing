@@ -4,6 +4,16 @@ import mentorImg from "../assets/coachprofile.jpg";
 // ✅ add your 2 certification images here
 import cert1 from "../assets/certifications/cert1.jpg";
 import cert2 from "../assets/certifications/cert2.jpg";
+import cert3 from "../assets/certifications/cert3.jpg";
+import cert4 from "../assets/certifications/cert4.jpg";
+import cert5 from "../assets/certifications/cert5.jpg";
+import cert6 from "../assets/certifications/cert6.jpg";
+import cert7 from "../assets/certifications/cert7.jpg";
+import cert8 from "../assets/certifications/cert8.jpg";
+
+
+
+import Certifications from "./Certifications";
 
 export default function MeetYourMentor() {
 
@@ -11,6 +21,12 @@ export default function MeetYourMentor() {
   const certs = [
     { src: cert1, alt: "Certification 1" },
     { src: cert2, alt: "Certification 2" },
+    { src: cert3, alt: "Certification 3" },
+    { src: cert4, alt: "Certification 4" },
+    { src: cert5, alt: "Certification 5" },
+    { src: cert6, alt: "Certification 6" },
+    { src: cert7, alt: "Certification 7" },
+    { src: cert8, alt: "Certification 8" },
   ];
 
   return (
@@ -126,36 +142,7 @@ export default function MeetYourMentor() {
         </div>
 
         {/* ✅ Certifications (clean + premium, fully visible) */}
-        <div className="border-t border-gray-100 bg-white px-6 sm:px-10 py-7">
-          <div className="flex items-center justify-between mb-4">
-            <p className="text-base sm:text-lg font-extrabold text-gray-900">
-              Certifications
-            </p>
-            <p className="text-xs sm:text-sm text-gray-500">
-              Verified credentials
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            {certs.map((c) => (
-              <div
-                key={c.alt}
-                className="w-full sm:w-1/2 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden"
-              >
-                {/* Fixed canvas so both look same size */}
-                <div className="h-48 sm:h-56 md:h-64 bg-gray-50 flex items-center justify-center p-4">
-                  <img
-                    src={c.src}
-                    alt={c.alt}
-                    className="max-h-full max-w-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
+        <Certifications certs={certs} />
 
       </div>
     </section>
