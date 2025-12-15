@@ -9,7 +9,6 @@ import cert4 from "../assets/certifications/cert4.jpg";
 import cert5 from "../assets/certifications/cert5.jpg";
 import cert6 from "../assets/certifications/cert6.jpg";
 import cert7 from "../assets/certifications/cert7.jpg";
-import cert8 from "../assets/certifications/cert8.jpg";
 
 
 
@@ -26,7 +25,6 @@ export default function MeetYourMentor() {
     { src: cert5, alt: "Certification 5" },
     { src: cert6, alt: "Certification 6" },
     { src: cert7, alt: "Certification 7" },
-    { src: cert8, alt: "Certification 8" },
   ];
 
   return (

@@ -6,10 +6,13 @@ import Hero from "./components/Hero";
 import VideoSection from "./components/VideoSection";
 import CallToActionButton from "./components/CallToActionButton";
 import MeetYourMentor from "./components/MeetYourMentor";
-import OfferSection from "./components/OfferSection";
 import PromiseSection from "./components/PromiseSection";
 import StickyBar from "./components/StickyBar";
 import TestimonialsSection from "./components/TestimonialsSection";
+import BlueprintPremiumSection from "./components/BlueprintPremiumSection";
+import PricingTrustCard from "./components/PricingTrustCard";
+import WhyHealthyNation from "./components/WhyHealthyNation";
+import VideoTestimonialsSection from "./components/VideoTestimonialsSection";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,8 +27,11 @@ function App() {
         <CallToActionButton />
         <TestimonialsSection />
         <MeetYourMentor />
-        <OfferSection />
+        <BlueprintPremiumSection />
         <PromiseSection />
+        <PricingTrustCard />
+        <WhyHealthyNation />
+        <VideoTestimonialsSection />
       </div>
 
       {/* Sticky bar shows from the start */}

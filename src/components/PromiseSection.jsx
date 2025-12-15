@@ -1,112 +1,299 @@
-export default function PromiseSection() {
+import React, { useMemo, useState } from "react";
+import { motion, useAnimation, useReducedMotion } from "framer-motion";
+
+const PROMISE = {
+  heading: "OUR PROMISE",
+  l1: "We coach you until you hit your goal.",
+  l2: "No extra charge.",
+  l3: "No time limit.",
+  l4: "Most programs stop when time ends.",
+  l5: "We stop when results happen.",
+  note: "*As long as you stay consistent with check-ins and follow the plan.",
+};
+
+function seededRand(seed) {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => (s = (s * 16807) % 2147483647) / 2147483647;
+}
+
+function CardTopRain({ active }) {
+  const pieces = useMemo(() => {
+    const rnd = seededRand(202501);
+    const count = 52;
+
+    return Array.from({ length: count }, (_, i) => {
+      const left = rnd() * 100;
+      const delay = rnd() * 1.4;
+      const duration = 2.4 + rnd() * 2.6;
+      const size = 6 + rnd() * 14;
+      const drift1 = (rnd() - 0.5) * 140;
+      const drift2 = (rnd() - 0.5) * 160;
+      const rot1 = rnd() * 360;
+      const rot2 = rot1 + 360 + rnd() * 360;
+      const blur = rnd() * 1.2;
+      const op = 0.18 + rnd() * 0.28;
+      const type = ["dot", "ring", "spark", "pill"][i % 4];
+      return {
+        id: i,
+        left,
+        delay,
+        duration,
+        size,
+        drift1,
+        drift2,
+        rot1,
+        rot2,
+        blur,
+        op,
+        type,
+      };
+    });
+  }, []);
+
+  if (!active) return null;
+
   return (
-    <section className="relative bg-white py-10 sm:py-16">
-      {/* Background accents */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 -left-24 h-80 w-80 rounded-full bg-orange-200/30 blur-3xl" />
-        <div className="absolute -bottom-28 -right-24 h-96 w-96 rounded-full bg-orange-300/20 blur-3xl" />
+    <div className="pointer-events-none absolute inset-0 z-50 overflow-hidden rounded-[34px]">
+      {pieces.map((p) => (
+        <span
+          key={p.id}
+          className={[
+            "absolute -top-16 hn-fall2",
+            p.type === "dot" ? "rounded-full bg-orange-500/45" : "",
+            p.type === "ring" ? "rounded-full border border-orange-500/40" : "",
+            p.type === "spark" ? "hn-spark2" : "",
+            p.type === "pill" ? "hn-pill2" : "",
+          ].join(" ")}
+          style={{
+            left: `${p.left}%`,
+            width: `${p.size}px`,
+            height:
+              p.type === "pill" ? `${Math.max(10, p.size * 1.6)}px` : `${p.size}px`,
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+            filter: `blur(${p.blur}px)`,
+            opacity: p.op,
+            ["--dx1"]: `${p.drift1}px`,
+            ["--dx2"]: `${p.drift2}px`,
+            ["--r1"]: `${p.rot1}deg`,
+            ["--r2"]: `${p.rot2}deg`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function PromiseRollReveal3D_CardTopFX() {
+  const reduceMotion = useReducedMotion();
+  const controls = useAnimation();
+  const [open, setOpen] = useState(false);
+  const [rolling, setRolling] = useState(false);
+
+  const isBackDataVisible = open;
+
+  const rollTo = async (targetOpen) => {
+    if (rolling) return;
+
+    const spins = Math.random() < 0.5 ? 2 : 3;
+
+    if (reduceMotion) {
+      setOpen(targetOpen);
+      controls.set({ rotateY: targetOpen ? 180 : 0, rotateX: 0 });
+      return;
+    }
+
+    setRolling(true);
+    if (!targetOpen) setOpen(false);
+
+    const start = targetOpen ? 0 : 180;
+    const end = targetOpen ? 180 : 0;
+    const total = 360 * spins + end;
+
+    await controls.start({
+      rotateY: [start, total],
+      rotateX: [0, 7, -7, 0],
+      transition: { duration: 1.25, ease: [0.22, 1, 0.36, 1] },
+    });
+
+    controls.set({ rotateY: end, rotateX: 0 });
+    setOpen(targetOpen);
+    setRolling(false);
+  };
+
+  const onTap = () => {
+    if (rolling) return;
+    rollTo(!open);
+  };
+
+  const shouldBounce = !reduceMotion && !open && !rolling;
+
+  return (
+    <section className="relative overflow-hidden bg-white">
+      <style>{`
+        .hn-stage { perspective: 1200px; }
+        .hn-3d { transform-style: preserve-3d; -webkit-transform-style: preserve-3d; will-change: transform; }
+        .hn-face {
+          position: absolute; inset: 0;
+          backface-visibility: hidden; -webkit-backface-visibility: hidden;
+          transform-style: preserve-3d; -webkit-transform-style: preserve-3d;
+        }
+        .hn-front { transform: rotateY(0deg) translateZ(1px); }
+        .hn-back  { transform: rotateY(180deg) translateZ(1px); }
+
+        .hn-grid {
+          background-image: radial-gradient(circle at 1px 1px, rgba(17,24,39,0.10) 1px, transparent 1px);
+          background-size: 18px 18px;
+          opacity: 0.18;
+        }
+        .hn-edge {
+          background: linear-gradient(135deg,
+            rgba(249,115,22,0.42),
+            rgba(251,191,36,0.12),
+            rgba(255,255,255,0.70));
+        }
+        .hn-shine {
+          background: radial-gradient(520px circle at 30% 25%,
+            rgba(255,255,255,0.85),
+            rgba(255,255,255,0.18) 40%,
+            rgba(255,255,255,0) 62%);
+          mix-blend-mode: soft-light;
+          opacity: 0.9;
+        }
+
+        @keyframes hnFall2 {
+          0%   { transform: translate3d(var(--dx1), -80px, 0) rotate(var(--r1)); opacity: 0; }
+          10%  { opacity: 1; }
+          100% { transform: translate3d(var(--dx2), 120vh, 0) rotate(var(--r2)); opacity: 0; }
+        }
+        .hn-fall2 { animation-name: hnFall2; animation-timing-function: linear; animation-iteration-count: infinite; }
+
+        .hn-spark2{
+          background: linear-gradient(180deg, rgba(249,115,22,0.65), rgba(251,191,36,0.42));
+          clip-path: polygon(50% 0%, 62% 35%, 100% 50%, 62% 65%, 50% 100%, 38% 65%, 0% 50%, 38% 35%);
+        }
+        .hn-pill2{
+          background: linear-gradient(180deg, rgba(249,115,22,0.42), rgba(251,191,36,0.22));
+          border-radius: 9999px;
+        }
+      `}</style>
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-130 w-130 -translate-x-1/2 rounded-full bg-orange-200/55 blur-3xl" />
+        <div className="absolute -bottom-44 right-40 h-130 w-130 rounded-full bg-amber-100/90 blur-3xl" />
+        <div className="absolute inset-0 hn-grid" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
-        <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-linear-to-b from-orange-50 via-white to-white shadow-sm">
-          {/* subtle pattern */}
-          <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-radial-gradient(#111827_1px,transparent_1px) bg-size:18px_18px" />
+      <div className="relative mx-auto max-w-xl px-4 py-12 sm:max-w-2xl sm:px-6 sm:py-16">
+        <div className="hn-stage">
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-0 -z-10 translate-x-2 translate-y-2 rounded-[34px] bg-orange-100/60 blur-[0.5px]" />
+            <div className="pointer-events-none absolute inset-0 -z-20 translate-x-4 translate-y-4 rounded-[34px] bg-amber-100/60 blur-[1px]" />
 
-          <div className="relative p-6 sm:p-10">
-            {/* Top row */}
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              {/* Left: label + headline */}
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-orange-200 bg-white/70 px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold tracking-[0.18em] sm:tracking-[0.22em] text-orange-700 shadow-sm">
-                  <span className="shrink-0">OUR PROMISE</span>
-                  <span className="shrink-0 h-1 w-1 rounded-full bg-orange-500" />
-                  <span className="shrink-0">GOAL-BASED COACHING</span>
-                </div>
+            <CardTopRain active={isBackDataVisible} />
 
+            <motion.button
+              type="button"
+              onClick={onTap}
+              animate={
+                shouldBounce
+                  ? {
+                      y: [0, -18, 0, -20, 0],
+                      scale: [1, 1.03, 1, 1.015, 1],
+                      rotateZ: [0, -1.2, 1.2, -0.8, 0],
+                    }
+                  : { y: 0, scale: 1, rotateZ: 0 }
+              }
+              transition={
+                shouldBounce
+                  ? {
+                      duration: 0.85,
+                      ease: [0.22, 1, 0.36, 1],
+                      repeat: Infinity,
+                      repeatDelay: 1,
+                    }
+                  : { duration: 0.1 }
+              }
+              className={[
+                "relative w-full overflow-hidden rounded-[34px] border border-gray-200",
+                "bg-white/85 backdrop-blur shadow-[0_30px_110px_-85px_rgba(0,0,0,0.55)]",
+                "active:scale-[0.99] select-none",
+                "transition-all duration-300 transition-[min-height]",
+                rolling ? "cursor-wait" : "cursor-pointer",
+                // ✅ UPDATED: smaller height after spin (open)
+                open ? "min-h-105 sm:min-h-100" : "min-h-60 sm:min-h-67.5",
+              ].join(" ")}
+              style={{ touchAction: "manipulation" }}
+              aria-expanded={open}
+            >
+              <div className="h-0.5 w-full bg-linear-to-r from-transparent via-orange-500/80 to-transparent" />
 
-                <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                  We coach you until you hit your goal —{" "}
-                  <span className="text-orange-600">no extra charge</span>.
-                  <br className="hidden sm:block" />
-                  <span className="text-gray-700">No time limit.</span>
-                </h2>
-
-                <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-                  You don’t “expire” after 12 weeks. If you follow the system,
-                  we stay with you until you reach the outcome you came for.
-                </p>
+              <div className="pointer-events-none absolute inset-0">
+                <div className="hn-edge absolute inset-0 opacity-55" />
+                <div className="absolute inset-px rounded-[33px] bg-white/70" />
+                <div className="hn-shine absolute inset-0" />
               </div>
 
-              {/* Right: mini “guarantee card” */}
-              <div className="w-full lg:w-[360px]">
-                <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-sm">
-                  <p className="text-xs font-semibold tracking-[0.18em] text-gray-500">
-                    INCLUDED
-                  </p>
-
-                  <div className="mt-3 rounded-2xl border border-gray-100 bg-gray-50 p-4">
-                    <p className="text-sm font-semibold text-gray-900">
-                      Unlimited coaching support*
-                    </p>
-                    <p className="mt-1 text-sm text-gray-600">
-                      We continue until your goal is achieved.
-                    </p>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {["No extra fees", "No deadline", "Goal-first"].map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <p className="mt-4 text-[12px] text-gray-500 leading-relaxed">
-                    *As long as you stay consistent with check-ins and follow
-                    the plan.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom strip */}
-            <div className="mt-8 rounded-3xl border border-gray-100 bg-white/80 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-orange-600/10 border border-orange-200">
-                    <span className="h-2.5 w-2.5 rounded-full bg-orange-600" />
-                  </span>
-
-                  <div>
-                    <p className="text-sm font-extrabold text-gray-900">
-                      100% goal-focused coaching
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Progress is measured weekly — not guessed.
-                    </p>
+              <motion.div
+                animate={controls}
+                initial={{ rotateY: 0, rotateX: 0 }}
+                className={[
+                  "hn-3d relative",
+                  // ✅ UPDATED: match wrapper height after spin too
+                  open ? "min-h-115 sm:min-h-105" : "min-h-65 sm:min-h-72.5",
+                ].join(" ")}
+              >
+                <div className="hn-face hn-front grid place-items-center p-6 sm:p-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
+                    {PROMISE.heading}
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "Weekly 1-on-1 check-in",
-                    "Adjustments as needed",
-                    "Accountability built-in",
-                  ].map((pill) => (
-                    <span
-                      key={pill}
-                      className="rounded-full border border-gray-100 bg-gray-50 px-3 py-2 text-xs sm:text-sm font-semibold text-gray-700"
-                    >
-                      {pill}
-                    </span>
-                  ))}
+                <div className="hn-face hn-back p-6 sm:p-8">
+                  {!isBackDataVisible ? (
+                    <div className="grid h-full place-items-center">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700">
+                        <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
+                        {PROMISE.heading}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
+                        <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
+                        {PROMISE.heading}
+                      </div>
+
+                      <h2 className="mt-4 text-[28px] font-semibold leading-tight tracking-tight text-gray-900 sm:text-4xl">
+                        {PROMISE.l1}
+                      </h2>
+
+                      <div className="mt-4 grid gap-2">
+                        <div className="rounded-2xl bg-orange-50 px-4 py-3 text-base font-semibold text-orange-700 ring-1 ring-orange-200">
+                          {PROMISE.l2}
+                        </div>
+                        <div className="rounded-2xl bg-orange-50 px-4 py-3 text-base font-semibold text-orange-700 ring-1 ring-orange-200">
+                          {PROMISE.l3}
+                        </div>
+                      </div>
+
+                      <div className="mt-5 space-y-2 text-sm leading-relaxed text-gray-800 sm:text-base">
+                        <p>{PROMISE.l4}</p>
+                        <p className="font-semibold text-gray-900">{PROMISE.l5}</p>
+                      </div>
+
+                      <p className="mt-5 text-xs leading-relaxed text-gray-600">
+                        {PROMISE.note}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </div>
-            {/* /Bottom strip */}
+              </motion.div>
+
+              <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-orange-200/55 blur-3xl" />
+            </motion.button>
           </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ export default function Certifications({ certs = [] }) {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
         {certs.map((c, i) => (
           <button
-            key={`${c.alt}-${i}`} // ✅ prevents “duplicate” rendering issues
+            key={`${c.alt}-${i}`}
             type="button"
             onClick={() => {
               setActive(i);
@@ -51,7 +51,7 @@ export default function Certifications({ certs = [] }) {
             className="group text-left rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
           >
             {/* fixed thumbnail canvas */}
-            <div className="aspect-[4/3] bg-gray-50 flex items-center justify-center p-3">
+            <div className="aspect-4/3 bg-gray-50 flex items-center justify-center p-3">
               <img
                 src={c.src}
                 alt={c.alt}

@@ -41,7 +41,7 @@ const Review = () => {
 
           {/* Animated 7000 */}
           <span>
-            <AnimatedNumber value={7000} /> Transformations
+            <AnimatedNumber value={2119} /> Transformations
           </span>
         </div>
       </div>
