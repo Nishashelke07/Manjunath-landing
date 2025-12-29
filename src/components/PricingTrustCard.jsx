@@ -1,9 +1,9 @@
 import React from "react";
 
 const INCLUSIONS = [
-  { label: "12 Weeks of 1:1 Coaching", price: "₹25,000" },
-  { label: "Personalized Diet & Training System", price: "₹15,000" },
-  { label: "Daily Accountability & Support", price: "₹9,999" },
+  { label: "12 Weeks of 1:1 Coaching", price: "₹25,000/-" },
+  { label: "Personalized Diet & Training System", price: "₹15,000/-" },
+  { label: "Daily Accountability & Support", price: "₹9,999/-" },
 ];
 
 export default function PricingTrustCard() {
@@ -67,7 +67,7 @@ export default function PricingTrustCard() {
               <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-4">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-semibold text-gray-700">Total Value</p>
-                  <p className="text-lg font-extrabold text-gray-900">₹49,999</p>
+                  <p className="text-lg font-extrabold text-gray-900">₹49,999/-</p>
                 </div>
                 <p className="mt-1 text-xs text-gray-500">
                   This shows the full value of what you’re getting.
@@ -77,14 +77,10 @@ export default function PricingTrustCard() {
 
             {/* Trust strip */}
             <div className="border-t border-gray-200 bg-white px-6 sm:px-8 py-4">
-              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-600">
+              <div className="flex flex-wrap items-center justify-around gap-2 text-xs sm:text-sm text-gray-600">
                 <span className="inline-flex items-center gap-2 rounded-full bg-gray-50 border border-gray-200 px-3 py-1">
                   <span className="h-2 w-2 rounded-full bg-orange-500" />
                   Clear pricing
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-gray-50 border border-gray-200 px-3 py-1">
-                  <span className="h-2 w-2 rounded-full bg-orange-500" />
-                  No pressure sales
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full bg-gray-50 border border-gray-200 px-3 py-1">
                   <span className="h-2 w-2 rounded-full bg-orange-500" />
@@ -119,17 +115,17 @@ export default function PricingTrustCard() {
                       Pay today
                     </p>
                     <p className="mt-2 text-4xl sm:text-5xl font-extrabold text-gray-900">
-                      ₹9,999
+                      ₹9,999/-
                     </p>
                   </div>
 
                   <div className="text-right">
                     <p className="text-xs text-gray-500">You save</p>
                     <p className="text-lg font-extrabold text-orange-700">
-                      ₹40,000
+                      ₹40,000/-
                     </p>
                     <p className="text-xs text-gray-500">
-                      (vs ₹49,999 value)
+                      (vs ₹49,999/- value)
                     </p>
                   </div>
                 </div>

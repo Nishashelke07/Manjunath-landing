@@ -1,18 +1,23 @@
+// VideoSection.jsx
+import React from "react";
+import vslVideo from "../assets/vsl.mp4";
+
 export default function VideoSection() {
   return (
-    <section className="bg-white flex flex-col items-center mt-0 md:-mt-48 lg:-mt-64 relative z-10">
+    <section className="bg-white flex flex-col items-center mt-0 relative z-10">
+  <div className="w-full max-w-3xl aspect-video px-2 sm:px-0">
+    <video
+      className="w-full h-full rounded-lg shadow-lg bg-black"
+      src={vslVideo}
+      controls
+      autoPlay
+      muted
+      playsInline
+      preload="metadata"
+    />
+  </div>
+</section>
 
-      {/* Video */}
-      <div className="w-full max-w-3xl aspect-video px-2 sm:px-0">
-        <iframe
-          className="w-full h-full rounded-lg shadow-lg"
-          src="https://www.youtube.com/embed/kcfs1-ryKWE?autoplay=1&mute=1&rel=0&showinfo=0"
-          title="YouTube video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    </section>
+
   );
 }

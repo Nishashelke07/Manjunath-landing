@@ -1,52 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
+
+const CALENDLY_URL =
+  "https://calendly.com/healthynation1008/talk-with-expert";
 
 const StickyBar = () => {
-    const [minutes, setMinutes] = useState(10);
-    const [seconds, setSeconds] = useState(0);
+  const handleClick = (e) => {
+    e.preventDefault();
 
-    useEffect(() => {
-        let myInterval = setInterval(() => {
-            if (seconds > 0) {
-                setSeconds(seconds - 1);
-            }
-            if (seconds === 0) {
-                if (minutes === 0) {
-                    clearInterval(myInterval);
-                } else {
-                    setMinutes(minutes - 1);
-                    setSeconds(59);
-                }
-            }
-        }, 1000);
+    if (window.pagesense) {
+      window.pagesense.push(["trackEvent", "cta_button_click"]);
+    } else {
+      console.error("Zoho PageSense not loaded. Unable to track custom event.");
+    }
 
-        return () => clearInterval(myInterval);
-    }, [minutes, seconds]);
+    // ✅ Open Calendly in new tab
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
+  };
 
-    return (
-        <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg flex items-center justify-between border-t border-gray-200 lg:px-20 z-[1000] space-x-2 sm:space-x-6">
-
-            
-            {/* Left-aligned content */}
-            <div className="flex flex-col items-start space-y-1 min-w-30">
-                <div className="text-orange-600 text-2xl font-bold">
-                    {minutes.toString().padStart(2, '0')}:
-                    {seconds.toString().padStart(2, '0')}
-                </div>
-                <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-700">
-                    <span className="font-extrabold">Limited Slots Only!</span>
-                </div>
-            </div>
-
-            {/* Right-aligned content */}
-            <div className="flex items-center flex-1 justify-end relative">
-                
-                <button className="bg-orange-600 text-white font-semibold text-sm sm:text-base md:text-lg rounded-3xl shadow-lg overflow-hidden transition transform px-4 sm:px-6 py-2 sm:py-3 whitespace-normal text-center max-w-50 sm:max-w-75">
-                    Book Your 1:1 Fitness Transformation Call
-                </button>
-            </div>
-
+  return (
+    <div
+      className="
+        fixed inset-x-0 bottom-0 w-full
+        bg-white shadow-lg border-t border-gray-200
+        z-[9999]
+        [transform:translateZ(0)]
+        [backface-visibility:hidden]
+        [will-change:transform]
+      "
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
+      {/* Top section */}
+      <div className="flex items-center justify-between px-4 py-3 lg:px-20">
+        {/* Price */}
+        <div className="flex items-baseline gap-2">
+          <span className="text-gray-400 line-through text-base sm:text-lg font-semibold">
+            ₹49,999
+          </span>
+          <span className="text-orange-600 text-2xl sm:text-3xl font-extrabold">
+            ₹9,999
+          </span>
         </div>
-    );
+
+        {/* Button */}
+        <button
+          onClick={handleClick}
+          className="bg-orange-600 text-white font-semibold text-sm sm:text-base md:text-lg rounded-3xl shadow-lg transition px-4 sm:px-6 py-2 sm:py-3 text-center"
+        >
+          Talk With Expert
+        </button>
+      </div>
+
+      {/* Thin line divider */}
+      <div className="h-px w-full bg-gray-200" />
+
+      {/* Bottom section */}
+      <div className="px-4 py-2 lg:px-20">
+        <p className="text-center text-xs sm:text-sm font-semibold text-gray-800">
+          Limited Slots Only !{" "}
+          <span className="text-orange-600">- 80% Exclusive Discount</span>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default StickyBar;

@@ -34,14 +34,17 @@ const Review = () => {
 
           {/* Animated 10 */}
           <span className="font-medium">
-            <AnimatedNumber value={10} /> Years Experience
+            <AnimatedNumber value={10} /> + Years Experience
           </span>
 
           <span className="mx-1">•</span>
 
           {/* Animated 7000 */}
           <span>
-            <AnimatedNumber value={2119} /> Transformations
+            <AnimatedNumber value={2000} /> Transformations
+          </span>
+          <span>
+            <span className="mx-1">•</span>100kg+ Fat-Loss Specialist
           </span>
         </div>
       </div>

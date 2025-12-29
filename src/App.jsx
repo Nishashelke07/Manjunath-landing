@@ -11,8 +11,13 @@ import StickyBar from "./components/StickyBar";
 import TestimonialsSection from "./components/TestimonialsSection";
 import BlueprintPremiumSection from "./components/BlueprintPremiumSection";
 import PricingTrustCard from "./components/PricingTrustCard";
-import WhyHealthyNation from "./components/WhyHealthyNation";
+// import WhyHealthyNation from "./components/WhyHealthyNation";
 import VideoTestimonialsSection from "./components/VideoTestimonialsSection";
+import HealthyNationTeam from "./components/HealthyNationTeam";
+import { NewspaperMarquee } from "./components/ImageMarquee";
+import WhatsAppProofWall from "./components/WhatsAppProofWall";
+import ContactFooter from "./components/ContactFooter";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,11 +32,15 @@ function App() {
         <CallToActionButton />
         <TestimonialsSection />
         <MeetYourMentor />
+        {/* <NewspaperMarquee /> */}
+        {/* <WhatsAppProofWall /> */}
         <BlueprintPremiumSection />
-        <PromiseSection />
-        <PricingTrustCard />
-        <WhyHealthyNation />
+        {/* <PromiseSection /> */}
+        {/* <PricingTrustCard /> */}
+        {/* <WhyHealthyNation /> */}
         <VideoTestimonialsSection />
+        {/* <HealthyNationTeam /> */}
+        <ContactFooter />
       </div>
 
       {/* Sticky bar shows from the start */}

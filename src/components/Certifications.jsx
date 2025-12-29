@@ -28,7 +28,7 @@ export default function Certifications({ certs = [] }) {
       <div className="flex items-end justify-between gap-4 mb-6">
         <div>
           <p className="text-base sm:text-lg font-extrabold text-gray-900">
-            Certifications
+            Coach Background
           </p>
           <p className="text-xs sm:text-sm text-gray-500">Verified credentials</p>
         </div>

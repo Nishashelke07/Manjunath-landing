@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 
+const CALENDLY_URL =
+  "https://calendly.com/healthynation1008/talk-with-expert";
+
 export default function CallToActionButton() {
   const handleClick = (e) => {
     e.preventDefault();
@@ -10,7 +13,8 @@ export default function CallToActionButton() {
       console.error("Zoho PageSense not loaded. Unable to track custom event.");
     }
 
-    window.location.href = "/";
+    // ✅ Open Calendly in new tab
+    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -21,6 +25,9 @@ export default function CallToActionButton() {
       transition={{ duration: 0.5 }}
     >
       <motion.a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={handleClick}
         className="
           relative inline-flex w-full sm:max-w-md
@@ -36,7 +43,7 @@ export default function CallToActionButton() {
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.96 }}
       >
-        Book Your 1:1 Fitness Transformation Call
+        Book Your 1:1 Fat-Loss Strategy Call
         <span className="animate-cross-line"></span>
       </motion.a>
     </motion.div>

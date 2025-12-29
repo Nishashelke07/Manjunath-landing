@@ -199,29 +199,29 @@ export default function PromiseRollReveal3D_CardTopFX() {
               animate={
                 shouldBounce
                   ? {
-                      y: [0, -18, 0, -20, 0],
-                      scale: [1, 1.03, 1, 1.015, 1],
-                      rotateZ: [0, -1.2, 1.2, -0.8, 0],
-                    }
+                    y: [0, -32, 0, -40, 0],
+                    scale: [1, 1.08, 0.98, 1.05, 1],
+                    rotateZ: [0, -2.5, 2.5, -1.5, 0],
+                  }
                   : { y: 0, scale: 1, rotateZ: 0 }
               }
               transition={
                 shouldBounce
                   ? {
-                      duration: 0.85,
-                      ease: [0.22, 1, 0.36, 1],
-                      repeat: Infinity,
-                      repeatDelay: 1,
-                    }
+                    duration: 1.1,
+                    ease: [0.22, 1, 0.36, 1],
+                    repeat: Infinity,
+                    repeatDelay: 0.9,
+                  }
                   : { duration: 0.1 }
               }
+
               className={[
                 "relative w-full overflow-hidden rounded-[34px] border border-gray-200",
                 "bg-white/85 backdrop-blur shadow-[0_30px_110px_-85px_rgba(0,0,0,0.55)]",
                 "active:scale-[0.99] select-none",
                 "transition-all duration-300 transition-[min-height]",
                 rolling ? "cursor-wait" : "cursor-pointer",
-                // ✅ UPDATED: smaller height after spin (open)
                 open ? "min-h-105 sm:min-h-100" : "min-h-60 sm:min-h-67.5",
               ].join(" ")}
               style={{ touchAction: "manipulation" }}
@@ -240,17 +240,25 @@ export default function PromiseRollReveal3D_CardTopFX() {
                 initial={{ rotateY: 0, rotateX: 0 }}
                 className={[
                   "hn-3d relative",
-                  // ✅ UPDATED: match wrapper height after spin too
                   open ? "min-h-115 sm:min-h-105" : "min-h-65 sm:min-h-72.5",
                 ].join(" ")}
               >
+                {/* ✅ FRONT */}
                 <div className="hn-face hn-front grid place-items-center p-6 sm:p-8">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
-                    {PROMISE.heading}
+                  <div className="flex flex-col items-center">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xl font-semibold text-orange-700">
+                      <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
+                      {PROMISE.heading}
+                    </div>
+
+                    {/* ✅ ADDED: Click me! */}
+                    <div className="mt-3 text-xl font-semibold text-gray-700">
+                      Tap to Reveal !
+                    </div>
                   </div>
                 </div>
 
+                {/* BACK */}
                 <div className="hn-face hn-back p-6 sm:p-8">
                   {!isBackDataVisible ? (
                     <div className="grid h-full place-items-center">

@@ -1,147 +1,185 @@
 import React from "react";
+import { motion } from "framer-motion";
 import mentorImg from "../assets/coachprofile.jpg";
 
-// ✅ add your 2 certification images here
-import cert1 from "../assets/certifications/cert1.jpg";
-import cert2 from "../assets/certifications/cert2.jpg";
-import cert3 from "../assets/certifications/cert3.jpg";
-import cert4 from "../assets/certifications/cert4.jpg";
-import cert5 from "../assets/certifications/cert5.jpg";
-import cert6 from "../assets/certifications/cert6.jpg";
-import cert7 from "../assets/certifications/cert7.jpg";
+// assets imports stay same…
 
+/* ---------- Animation Variants ---------- */
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
+const stagger = {
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
-import Certifications from "./Certifications";
+const imageAnim = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
 
 export default function MeetYourMentor() {
-
-
-  const certs = [
-    { src: cert1, alt: "Certification 1" },
-    { src: cert2, alt: "Certification 2" },
-    { src: cert3, alt: "Certification 3" },
-    { src: cert4, alt: "Certification 4" },
-    { src: cert5, alt: "Certification 5" },
-    { src: cert6, alt: "Certification 6" },
-    { src: cert7, alt: "Certification 7" },
-  ];
-
   return (
     <section className="relative bg-white py-4 px-6 md:px-12 lg:px-24">
       <div className="mt-3 max-w-6xl mx-auto border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+
           {/* Image */}
-          <div className="order-1 md:order-2 h-full flex items-stretch">
+          <motion.div
+            variants={imageAnim}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="order-1 md:order-2 h-full flex items-stretch bg-white"
+          >
             <img
               src={mentorImg}
               alt="Sourav Mishra - Coach"
-              className="w-full h-96 sm:h-112 md:h-full object-cover md:rounded-l-none md:rounded-r-3xl"
+              className="w-full h-96 sm:h-112 md:h-full object-contain md:rounded-l-none md:rounded-r-3xl"
             />
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="order-2 md:order-1 p-8 md:p-14">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="order-2 md:order-1 p-8 md:p-14"
+          >
+
             {/* Heading */}
-            <div className="mb-8">
+            <motion.div variants={fadeUp} className="mb-8">
               <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-orange-400">
                 Meet your coach
               </p>
 
-              <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                Sourav <span className="text-orange-400">Mishra</span>
-              </h2>
+              <h4 className="mt-3 text-3xl md:text-3xl font-extrabold text-gray-900 leading-tight">
+                Helping Men Over 30 Fix Fat Gain{" "}
+                <span className="text-orange-400">Not Just Lose Weight</span>
+              </h4>
+            </motion.div>
 
-              <p className="mt-4 text-base md:text-lg font-medium text-gray-700 leading-relaxed">
-                From struggle to success — I wasn’t born with a fit body,{" "}
-                <span className="font-semibold text-gray-900">I built it.</span>
-              </p>
-
-              <div className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-sm md:text-base text-gray-700">
-                <span className="font-semibold text-orange-400">10+ years</span>
-                <span className="text-gray-400">•</span>
-                <span className="font-semibold text-orange-400">
-                  7,000+ transformations
-                </span>
+            {/* Stats */}
+            <motion.div
+              variants={fadeUp}
+              className="mt-5 grid grid-cols-5 gap-3 mb-8"
+            >
+              <div className="col-span-2 rounded-2xl border border-orange-100 bg-orange-50 px-3 py-3 text-center">
+                <p className="text-xl font-extrabold">10+ yrs</p>
+                <p className="text-xs font-semibold text-orange-600">
+                  Experience
+                </p>
               </div>
-            </div>
+
+              <div className="col-span-3 rounded-2xl border border-orange-100 bg-orange-50 px-5 py-3 text-center">
+                <p className="text-2xl font-extrabold">2,000+</p>
+                <p className="text-xs font-semibold text-orange-600">
+                  Transformations
+                </p>
+              </div>
+            </motion.div>
 
             {/* Body */}
-            <div className="space-y-5 text-gray-700 text-base md:text-lg leading-relaxed">
-              <p>
-                After <span className="font-bold text-gray-900">10 years</span> of
-                trial, error, and learning, I finally cracked the code to{" "}
-                <span className="text-orange-400 font-semibold">
-                  sustainable fitness that works in real life.
-                </span>
-              </p>
+            <motion.div
+              variants={stagger}
+              className="space-y-8 text-gray-700 text-base md:text-lg leading-relaxed"
+            >
+              {/* Intro */}
+              <motion.div variants={fadeUp} className="space-y-4">
+                <p className="text-xl md:text-2xl font-extrabold text-gray-900">
+                  I’m Manjunath.
+                </p>
 
-              <p className="font-semibold text-gray-900">
-                Expertise &amp; Experience —
-              </p>
+                <p>
+                  For <strong>10+ years</strong>, I’ve worked with men over 30 —
+                  especially those weighing{" "}
+                  <span className="text-orange-400 font-semibold">
+                    100kg or more
+                  </span>.
+                </p>
 
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>
-                  <span className="font-semibold text-gray-900">
-                    Top 10 Pro Coach
+                <p>
+                  I’ve helped <strong>2,000+ men</strong> lose fat by fixing{" "}
+                  <strong>metabolism and lifestyle</strong>, not by pushing
+                  generic diets or hard workouts.
+                </p>
+              </motion.div>
+
+              {/* Credentials */}
+              <motion.div variants={fadeUp} className="rounded-3xl border border-orange-100 bg-gradient-to-b from-orange-50 to-white p-6">
+                <p className="mb-4 text-lg font-semibold text-gray-900">
+                  Credentials
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    ["10+", "Years Experience"],
+                    ["2,000+", "Men Transformed"],
+                    ["Fat-Loss", "Metabolism & Lifestyle"],
+                  ].map(([a, b], i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ y: -4 }}
+                      className="rounded-2xl border border-gray-200 bg-white p-4 text-center shadow-sm"
+                    >
+                      <p className="text-2xl font-extrabold">{a}</p>
+                      <p className="text-sm font-semibold text-orange-600">
+                        {b}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Core Truth */}
+              <motion.div
+                variants={fadeUp}
+                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm space-y-3"
+              >
+                <p className="font-semibold">Core Truth</p>
+                <p className="font-bold">
+                  Big fitness companies make one mistake:
+                </p>
+                <p className="text-xl font-extrabold">
+                  They give everyone the same plan.
+                </p>
+                <p>
+                  But{" "}
+                  <span className="text-orange-400 font-semibold">
+                    100kg bodies
                   </span>{" "}
-                  at HealthifyMe
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-900">
-                    Senior Fitness Coach
-                  </span>{" "}
-                  at Fitelo
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-900">Nutritionist</span>{" "}
-                  at Apollo Clinic
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-900">Coach</span> at
-                  Anytime Fitness &amp; FITRR
-                </li>
-                <li>
-                  <span className="font-semibold text-gray-900">7,000+</span>{" "}
-                  transformations
-                </li>
-              </ul>
-
-              <div className="pt-2 space-y-3">
-                <p className="font-semibold text-gray-900">
-                  Big fitness companies make one major mistake:
+                  don’t work like normal bodies.
                 </p>
-                <p className="text-gray-900 font-bold">
-                  they give everyone the same plan.
-                </p>
-                <p>No two bodies are the same.</p>
-                <p>No two lifestyles are the same.</p>
-
-                <p className="italic text-gray-600">
-                  That’s exactly why{" "}
-                  <span className="font-semibold text-gray-900">HealthyNation</span>{" "}
-                  exists — to give you a plan that’s built for{" "}
-                  <span className="text-orange-400 font-semibold">YOU</span>, not
-                  the masses.
-                </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* CTA */}
-            <div className="mt-8">
-              <button
-                // onClick={handleRedirect}
-                className="px-8 py-3 bg-orange-400 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 hover:shadow-lg transition duration-300"
-              >
+            <motion.div
+              variants={fadeUp}
+              whileHover={{ scale: 1.04 }}
+              className="mt-10"
+            >
+              <button className="px-8 py-3 bg-orange-400 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 transition">
                 Start Your Fitness Journey
               </button>
-            </div>
-          </div>
+            </motion.div>
+
+          </motion.div>
         </div>
-
-        {/* ✅ Certifications (clean + premium, fully visible) */}
-        <Certifications certs={certs} />
-
       </div>
     </section>
   );
