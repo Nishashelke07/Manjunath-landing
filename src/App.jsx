@@ -12,7 +12,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import BlueprintPremiumSection from "./components/BlueprintPremiumSection";
 import PricingTrustCard from "./components/PricingTrustCard";
 // import WhyHealthyNation from "./components/WhyHealthyNation";
-import VideoTestimonialsSection from "./components/VideoTestimonialsSection";
+// import VideoTestimonialsSection from "./components/VideoTestimonialsSection";
 import HealthyNationTeam from "./components/HealthyNationTeam";
 import { NewspaperMarquee } from "./components/ImageMarquee";
 import WhatsAppProofWall from "./components/WhatsAppProofWall";
@@ -38,7 +38,7 @@ function App() {
         {/* <PromiseSection /> */}
         {/* <PricingTrustCard /> */}
         {/* <WhyHealthyNation /> */}
-        <VideoTestimonialsSection />
+        {/* <VideoTestimonialsSection /> */}
         {/* <HealthyNationTeam /> */}
         <ContactFooter />
       </div>
