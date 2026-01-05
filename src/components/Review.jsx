@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const AnimatedNumber = ({ value, duration = 2 }) => {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const AnimatedNumber = ({ value, duration = 2 }) => {
       onUpdate: (v) => setDisplay(Math.floor(v)),
     });
 
-    return controls.stop; // cleanup
+    return controls.stop;
   }, [value, duration, count]);
 
   return <span>{display.toLocaleString()}+</span>;
@@ -22,35 +21,55 @@ const AnimatedNumber = ({ value, duration = 2 }) => {
 
 const Review = () => {
   return (
-    <div className="w-full flex justify-center bg-white py-5">
-      <div className="flex items-center gap-2 px-3 py-2 rounded-full shadow-md">
-        
-        <div className="flex items-center gap-1 text-sm text-black">
-          <Star
-            className="text-yellow-400 fill-yellow-400"
-            size={16}
-            strokeWidth={2.2}
-          />
+    <div className="w-full flex justify-center bg-white py-4 px-3">
+      <div
+        className="
+          flex flex-col sm:flex-row
+          items-center
+          gap-2 sm:gap-3
+          px-4 py-3
+          rounded-full
+          shadow-md
+          text-center sm:text-left
+        "
+      >
+        {/* Star */}
+        <Star
+          className="text-yellow-600 fill-yellow-400 shrink-0"
+          size={16}
+          strokeWidth={2.2}
+        />
 
-          {/* Animated 10 */}
-          <span className="font-medium">
-            <AnimatedNumber value={10} /> + Years Experience
+        {/* Content */}
+        <div
+          className="
+            flex flex-wrap
+            justify-center sm:justify-start
+            items-center
+            gap-x-2 gap-y-1
+            text-xs sm:text-sm
+            text-black
+          "
+        >
+          <span className="font-medium whitespace-nowrap">
+            <AnimatedNumber value={10} /> Years Experience
           </span>
 
-          <span className="mx-1">•</span>
+          <span className="hidden sm:inline mx-1">•</span>
 
-          {/* Animated 7000 */}
-          <span>
+          <span className="whitespace-nowrap">
             <AnimatedNumber value={2000} /> Transformations
           </span>
-          <span>
-            <span className="mx-1">•</span>100kg+ Fat-Loss Specialist
+
+          <span className="hidden sm:inline mx-1">•</span>
+
+          <span className="whitespace-nowrap">
+            100kg+ Fat-Loss Specialist
           </span>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default Review;

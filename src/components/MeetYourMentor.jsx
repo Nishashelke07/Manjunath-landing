@@ -34,7 +34,7 @@ const imageAnim = {
 export default function MeetYourMentor() {
   return (
     <section className="relative bg-white py-4 px-6 md:px-12 lg:px-24">
-      <div className="mt-3 max-w-6xl mx-auto border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
+      <div className="mt-3 max-w-7xl mx-auto border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
 
           {/* Image */}
@@ -63,13 +63,13 @@ export default function MeetYourMentor() {
 
             {/* Heading */}
             <motion.div variants={fadeUp} className="mb-8">
-              <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-orange-400">
+              <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-orange-600">
                 Meet your coach
               </p>
 
               <h4 className="mt-3 text-3xl md:text-3xl font-extrabold text-gray-900 leading-tight">
                 Helping Men Over 30 Fix Fat Gain{" "}
-                <span className="text-orange-400">Not Just Lose Weight</span>
+                <span className="text-orange-600">Not Just Lose Weight</span>
               </h4>
             </motion.div>
 
@@ -107,7 +107,7 @@ export default function MeetYourMentor() {
                 <p>
                   For <strong>10+ years</strong>, I’ve worked with men over 30 —
                   especially those weighing{" "}
-                  <span className="text-orange-400 font-semibold">
+                  <span className="text-orange-600 font-semibold">
                     100kg or more
                   </span>.
                 </p>
@@ -159,7 +159,7 @@ export default function MeetYourMentor() {
                 </p>
                 <p>
                   But{" "}
-                  <span className="text-orange-400 font-semibold">
+                  <span className="text-orange-600 font-semibold">
                     100kg bodies
                   </span>{" "}
                   don’t work like normal bodies.
@@ -173,7 +173,7 @@ export default function MeetYourMentor() {
               whileHover={{ scale: 1.04 }}
               className="mt-10"
             >
-              <button className="px-8 py-3 bg-orange-400 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 transition">
+              <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 transition">
                 Start Your Fitness Journey
               </button>
             </motion.div>

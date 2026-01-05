@@ -9,12 +9,12 @@ export default function Hero() {
           {/* Mobile (exactly 4 lines, no "..." ) */}
           <span className="block sm:hidden text-black">
             India’s Leading Coach for{" "}
-            <span className="text-orange-400">100kg+</span> Men Reveals
+            <span className="text-orange-600">100kg+</span> Men Reveals
             <br />
             The System That Helps
             <br />
             Men Over{" "}
-            <span className="text-orange-400">30 Lose 12–25+ Kgs </span> Safely
+            <span className="text-orange-600">30 Lose 12–25+ Kgs </span> Safely
             <br />
           </span>
 
@@ -22,17 +22,17 @@ export default function Hero() {
           <span className="hidden sm:block">
             <span className="block text-black">
               India’s Leading Coach for
-              <span className="text-orange-400"> 100kg+ </span> Men Reveals
+              <span className="text-orange-600"> 100kg+ </span> Men Reveals
             </span>
             <span className="block text-black">
               The System That Helps Men Over{" "}
-              <span className="text-orange-400"> 30 Lose 12–25+ Kgs</span> Safely
+              <span className="text-orange-600"> 30 Lose 12–25+ Kgs</span> Safely
             </span>
           </span>
         </h1>
 
         {/* Subheading */}
-        <h2 className="my-4 text-[15px] sm:text-sm md:text-base lg:text-lg font-medium text-gray-700 leading-snug mx-auto px-2 sm:px-6">
+        <h2 className="text-m sm:text-base md:text-lg   text-grey-600">
           Designed specifically for heavy bodies. No joint damage. No extreme
           diets. No gym dependency.
         </h2>

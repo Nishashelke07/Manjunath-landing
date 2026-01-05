@@ -7,7 +7,7 @@ const ContactFooter = () => {
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             If You’re Over 30 and{" "}
-            <span className="text-orange-400">100kg+</span>,
+            <span className="text-orange-600">100kg+</span>,
             <br />
             This Is Your Turning Point
           </h2>
@@ -25,7 +25,7 @@ const ContactFooter = () => {
   
           {/* CTA */}
           <div className="mt-10">
-            <button className="px-10 py-4 bg-orange-400 text-white text-lg font-semibold rounded-2xl shadow-md hover:bg-orange-500 hover:shadow-lg transition duration-300">
+            <button className="px-10 py-4 bg-orange-600 text-white text-lg font-semibold rounded-2xl shadow-md hover:bg-orange-500 hover:shadow-lg transition duration-300">
               Book Your 1:1 Fat-Loss Strategy Call
             </button>
   

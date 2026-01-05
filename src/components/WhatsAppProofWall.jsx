@@ -227,7 +227,7 @@ function WhatsAppProofCarousel({
                   className={[
                     "shrink-0 overflow-hidden rounded-2xl border bg-white transition",
                     i === active
-                      ? "border-orange-400 ring-2 ring-orange-200"
+                      ? "border-orange-600 ring-2 ring-orange-200"
                       : "border-orange-100 hover:border-orange-300",
                   ].join(" ")}
                   style={{ width: 88 }}
