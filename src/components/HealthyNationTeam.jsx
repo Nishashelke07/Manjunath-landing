@@ -93,7 +93,7 @@ function TeamCard({ m }) {
 export default function HealthyNationTeam() {
   const team = [
     {
-      name: "Sourav",
+      name: "Manjunath",
       roleTitle: "Founder & CEO",
       brand: "HealthyNation",
       photo: souravImg,
