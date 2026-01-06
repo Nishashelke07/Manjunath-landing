@@ -29,9 +29,11 @@ const Review = () => {
           gap-2 sm:gap-3
           px-4 py-3
           rounded-full
-          shadow-md
+          bg-white
+          shadow-[0_8px_24px_rgba(0,0,0,0.15)]
           text-center sm:text-left
         "
+      
       >
         {/* Star */}
         <Star

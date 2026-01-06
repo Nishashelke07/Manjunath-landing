@@ -1,42 +1,41 @@
 export default function Hero() {
   return (
-    <div className="relative bg-white min-h-[25vh] flex items-center justify-center">
-      {/* 📱 Push down on mobile */}
-      <div className="relative px-2 sm:px-4 text-center max-w-5xl mt-1 md:mt-0">
-        {/* Title */}
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug tracking-tight mx-auto">
+    <section className="relative bg-white">
+      <div className="mx-auto max-w-5xl px-4 pt-10 pb-14 text-center">
 
-          {/* Mobile (exactly 4 lines, no "..." ) */}
+        {/* Title */}
+        <h1 className="mx-auto font-bold tracking-tight leading-tight
+          text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+
+          {/* Mobile (exact lines preserved) */}
           <span className="block sm:hidden text-black">
             India’s Leading Coach for{" "}
-            <span className="text-orange-600">100kg+</span> Men Reveals
-            <br />
-            The System That Helps
+            <span className="text-orange-600">100kg+</span> Men Reveals 
+            the System That Helps
             <br />
             Men Over{" "}
             <span className="text-orange-600">30 Lose 12–25+ Kgs </span> Safely
-            <br />
           </span>
 
           {/* Desktop (unchanged) */}
-          <span className="hidden sm:block">
-            <span className="block text-black">
+          <span className="hidden sm:block text-black">
+            <span className="block">
               India’s Leading Coach for
               <span className="text-orange-600"> 100kg+ </span> Men Reveals
             </span>
-            <span className="block text-black">
-              The System That Helps Men Over{" "}
+            <span className="block"> The System That Helps Men Over{" "}
               <span className="text-orange-600"> 30 Lose 12–25+ Kgs</span> Safely
             </span>
           </span>
         </h1>
 
         {/* Subheading */}
-        <h2 className="text-m sm:text-base md:text-lg   text-grey-600">
+        <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
           Designed specifically for heavy bodies. No joint damage. No extreme
           diets. No gym dependency.
-        </h2>
+        </p>
+
       </div>
-    </div>
+    </section>
   );
 }

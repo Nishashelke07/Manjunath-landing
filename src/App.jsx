@@ -17,6 +17,7 @@ import HealthyNationTeam from "./components/HealthyNationTeam";
 import { NewspaperMarquee } from "./components/ImageMarquee";
 import WhatsAppProofWall from "./components/WhatsAppProofWall";
 import ContactFooter from "./components/ContactFooter";
+import CoachBackground from "./components/CoachBackground";
 
 
 function App() {
@@ -25,13 +26,14 @@ function App() {
   return (
     <>
       {/* Add bottom padding so content isn't covered by sticky bar */}
-      <div className="pb-24 sm:pb-28">
+      <div className="pb-24 sm:pb-28 justify-center" >
         <Review />
         <Hero />
         <VideoSection />
         <CallToActionButton />
         <TestimonialsSection />
         <MeetYourMentor />
+        
         {/* <NewspaperMarquee /> */}
         {/* <WhatsAppProofWall /> */}
         <BlueprintPremiumSection />
@@ -40,6 +42,7 @@ function App() {
         {/* <WhyHealthyNation /> */}
         {/* <VideoTestimonialsSection /> */}
         {/* <HealthyNationTeam /> */}
+        <CoachBackground/>
         <ContactFooter />
       </div>
 

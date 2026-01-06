@@ -67,7 +67,7 @@ export default function PricingTrustCard() {
               <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-4">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-semibold text-gray-700">Total Value</p>
-                  <p className="text-lg font-extrabold text-gray-900">₹49,999/-</p>
+                  {/* <p className="text-lg font-extrabold text-gray-900">₹49,999/-</p> */}
                 </div>
                 <p className="mt-1 text-xs text-gray-500">
                   This shows the full value of what you’re getting.

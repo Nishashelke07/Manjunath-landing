@@ -16,54 +16,53 @@ const stagger = {
 
 export default function HealthyNationStickyStack() {
   return (
-    <section className="bg-white py-16 sm:py-20 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* SECTION 1 — PROBLEM */}
+    <section className="bg-white py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 text-center">
+
+        {/* ================= SECTION 1 — PROBLEM ================= */}
         <motion.div
-          // className="max-w-10xl"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mx-auto max-w-3xl"
         >
-          <p className="text-s font-semibold tracking-[0.22em] uppercase text-orange-600">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-orange-600 lg:text-center">
             The real problem
           </p>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight lg:text-center">
             Why Diets & Workouts Stop Working After
             <span className="text-orange-600"> 100kg</span>
           </h2>
 
-          <div className="mt-6 space-y-4 text-base sm:text-lg text-gray-700">
+          <div className="mt-6 space-y-4 text-base sm:text-lg text-gray-700 text-center">
             <p>
               When you’re over{" "}
               <span className="font-semibold text-gray-900">100kg</span>:
             </p>
 
             <motion.ul
-              className="space-y-2 pl-4 text-xl font-semibold,"
-              variants={stagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {[
-                "Metabolism is slower",
-                "Joints are under constant stress",
-                "Recovery is poor",
-                "Fat sticks easily",
-              ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  variants={fadeUp}
-                  transition={{ duration: 0.4 }}
-                >
-                  • {item}
-                </motion.li>
-              ))}
-            </motion.ul>
+  className="flex flex-col md:flex-row gap-4 pl-4 text-xl font-semibold"
+
+  variants={stagger}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+>
+  {[
+    "Metabolism is slower",
+    "Joints are under constant stress",
+    "Recovery is poor",
+    "Fat sticks easily",
+  ].map((item, i) => (
+    <motion.li key={i} variants={fadeUp} className="whitespace-nowrap">
+      • {item}
+    </motion.li>
+  ))}
+</motion.ul>
+
 
             <p className="font-semibold text-gray-900">
               Same diet. Same workout. Same rules.
@@ -78,25 +77,25 @@ export default function HealthyNationStickyStack() {
           </div>
         </motion.div>
 
-        {/* SECTION 2 — SOLUTION */}
+        {/* ================= SECTION 2 — SOLUTION ================= */}
         <motion.div
-          className="rounded-[36px] border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-orange-50 p-8 sm:p-12 shadow-sm"
+          className="mx-auto max-w-5xl rounded-[36px] border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-orange-50 p-8 sm:p-12 shadow-sm"
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-orange-600">
+          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-orange-600 lg:text-center">
             The solution
           </p>
 
-          <h3 className="mt-3 text-3xl sm:text-4xl font-extrabold text-gray-900">
+          <h3 className="mt-3 text-3xl sm:text-4xl font-extrabold text-gray-900 lg:text-center">
             Built Specifically for{" "}
             <span className="text-orange-600">100kg+</span> Bodies
           </h3>
 
           <motion.div
-            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5"
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 text-left"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -121,14 +120,14 @@ export default function HealthyNationStickyStack() {
             ))}
           </motion.div>
 
-          <p className="mt-6 font-bold text-gray-900">
+          <p className="mt-6 font-bold text-gray-900 lg:text-center">
             No gym dependency. No starvation.
           </p>
         </motion.div>
 
-        {/* SECTION 3 — PROMISE */}
+        {/* ================= SECTION 3 — PROMISE ================= */}
         <motion.div
-          className="max-w-4xl mx-auto rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 shadow-sm"
+          className="mx-auto max-w-4xl rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 shadow-sm text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -138,7 +137,7 @@ export default function HealthyNationStickyStack() {
             The promise
           </p>
 
-          <p className="mt-4 text-2xl sm:text-3xl font-extrabold text-gray-900 leading-snug">
+          <p className="mt-4 text-2xl sm:text-3xl font-extrabold text-gray-900">
             Coaching continues until you hit your goal.
           </p>
 

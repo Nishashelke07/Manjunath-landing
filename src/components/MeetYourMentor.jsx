@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import mentorImg from "../assets/coachprofile.jpg";
+import mentorImg from "../assets/coachprofile.jpeg";
 
 // assets imports stay same…
 
