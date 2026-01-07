@@ -1,13 +1,17 @@
 import React from "react";
 
+import cert1 from "../assets/certifications/cert1.jpeg";
+import cert2 from "../assets/certifications/cert2.jpeg";
+import cert3 from "../assets/certifications/cert3.jpeg";
+import cert4 from "../assets/certifications/cert4.jpeg";
+import cert5 from "../assets/certifications/cert5.jpeg";
+
 const certificates = [
-  { id: 1, img: "/certificates/cert1.png" },
-  { id: 2, img: "/certificates/cert2.png" },
-  { id: 3, img: "/certificates/cert3.png" },
-  { id: 4, img: "/certificates/cert4.png" },
-  { id: 5, img: "/certificates/cert5.png" },
-  { id: 6, img: "/certificates/cert6.png" },
-  { id: 7, img: "/certificates/cert7.png" },
+  { id: 1, img: cert1 },
+  { id: 2, img: cert2 },
+  { id: 3, img: cert3 },
+  { id: 4, img: cert4 },
+  { id: 5, img: cert5 },
 ];
 
 const CoachBackground = () => {
@@ -23,7 +27,7 @@ const CoachBackground = () => {
         </div>
 
         <span className="rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-sm font-medium text-orange-600">
-          7 certificates
+          5 certificates
         </span>
       </div>
 
@@ -36,17 +40,17 @@ const CoachBackground = () => {
           >
             {/* Image */}
             <div className="flex items-center justify-center rounded-t-2xl bg-gray-50 p-4">
-              {/* <img
+              <img
                 src={item.img}
-                alt="Certificate"
+                alt={`Certificate ${item.id}`}
                 className="h-32 w-auto object-contain"
-              /> */}
+              />
             </div>
 
             {/* Content */}
-            <div className="p-4">
+            <div className="p-4 text-left">
               <p className="font-medium text-gray-900 truncate">
-                Certification...
+                Certification {item.id}
               </p>
               <p className="text-sm text-gray-500">Click to preview</p>
             </div>

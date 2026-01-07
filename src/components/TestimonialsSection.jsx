@@ -1,19 +1,16 @@
 // TestimonialsSection.jsx
 import TestimonialCard from "./TestimonialCard";
+import Sandeep from "../assets/testimonials/Sandeep.jpg";
+import Manoj from "../assets/testimonials/Manoj.jpg";
+import Naushad from "../assets/testimonials/Naushad.jpg";
+import Ayush from "../assets/testimonials/Ayush.jpg";
+import Keerthi from "../assets/testimonials/Keerthi.jpg";
+import vinay from "../assets/testimonials/vinay.jpg";
+import richard from "../assets/testimonials/richard.jpg";
+import raksha from "../assets/testimonials/raksha.jpg";
 
-import Umesh from "../assets/testimonials/trans1.jpg";
-import soyel from "../assets/testimonials/Soyel.jpg";
-import rahul from "../assets/testimonials/Rahul.jpg";
-import sunny from "../assets/testimonials/Sunny.jpg";
-import hamid from "../assets/testimonials/trans6.jpg";
-import manoj from "../assets/testimonials/trans5.jpg";
 
-import arup from "../assets/testimonials/Arup-jain.jpeg";
-import ayush from "../assets/testimonials/Ayush.jpeg";
-import noname from "../assets/testimonials/noname.jpeg";
-import ragish from "../assets/testimonials/Ragish.jpeg";
-import souravsingh from "../assets/testimonials/Sourav Singh.jpeg";
-import srivastav from "../assets/testimonials/Srivastav.jpeg";
+// import manoj from "../assets/testimonials/trans5.jpg";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,90 +21,63 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Umesh Mohnani",
-      subtitle: "Desk job • Age 30",
-      result: "Lost 14 kgs in 3 months",
-      img: Umesh,
+      name: "Sandeep Daniel",
+      subtitle: "Software Engineer • Age 39",
+      result: "Lost 16 kgs in 20 weeks",
+      img: Sandeep,
+      watermark: "@Healthynation",
+     
+    },
+    {
+      name: "Naushad",
+      subtitle: "CTO • Age 35",
+      result: "Lost 9 kgs & Gained 5kg muscle in 8 weeks",
+      img: Naushad,
       watermark: "@Healthynation",
     },
     {
-      name: "Sunny Verma",
-      subtitle: "IT professional • Age 35",
-      result: "Lost 10 kgs in 3 months",
-      img: sunny,
-      watermark: "@Healthynation",
-    },
-    {
-      name: "Manoj J Kakde",
-      subtitle: "9–5 job • Age 44",
-      result: "Lost 15 kgs in 4 months",
-      img: manoj,
-      watermark: "@Healthynation",
-    },
-    {
-      name: "Hamid Kamal",
-      subtitle: "Desk job • Age 35",
-      result: "Lost 17 kgs in 4 months",
-      img: hamid,
-      imgPos: "md:object-right",
-      watermark: "@Healthynation",
-    },
-    {
-      name: "Soyel",
-      subtitle: "2nd hand bike dealer • Age 25",
-      result: "Lost 10 kgs in 3 months",
-      img: soyel,
-      watermark: "@Healthynation",
-    },
-    {
-      name: "Rahul Nathani",
-      subtitle: "Shop keeper • Age 32",
-      result: "Lost 13 kgs in 4 months",
-      img: rahul,
-      watermark: "@Healthynation",
-    },
-    {
-      name: "Sourav Singh",
-      subtitle: "IT",
-      result: "Lost 100 kgs to 80 kg",
-      img: souravsingh,
+      name: "Manoj ",
+      subtitle: "Lawyer • Age 29",
+      result: "Lost 10 kgs in 10 weeks",
+      img: Manoj,
       watermark: "@Healthynation",
     },
     {
       name: "Ayush",
-      subtitle: "Businessman",
-      result: "Lost 99 kgs to 82 kg",
-      img: ayush,
+      subtitle: "Buisnees Owner • Age 30 ",
+      result: "Lost 11 kgs in 16 weeks",
+      img: Ayush,
       watermark: "@Healthynation",
     },
     {
-      name: "Ragish",
-      subtitle: "IT",
-      result: "Lost 92 kgs to 82 kg",
-      img: ragish,
+      name: "Keerthi",
+      subtitle: "Government Job • Age 37",
+      result: "Lost 19 kgs in 18 weeks",
+      img: Keerthi,
       watermark: "@Healthynation",
     },
     {
-      name: "Srivastav",
-      subtitle: "Job",
-      result: "Lost 80 kgs to 70 kg",
-      img: srivastav,
+      name: "Vinay",
+      subtitle: "Bankerr • Age 41",
+      result: "Lost 11 kgs in 12 weeks",
+      img: vinay,
       watermark: "@Healthynation",
     },
     {
-      name: "Arup Jain",
-      subtitle: "Business",
-      result: "Lost 108 kgs to 70 kg",
-      img: arup,
+      name: "Richard",
+      subtitle: "Buisness Owner • Age 41" ,
+      result: "Lost 5 kgs in 6weeks",
+      img: richard,
       watermark: "@Healthynation",
     },
     {
-      name: "",
-      subtitle: "Business",
-      result: "Lost 90 kgs to 75 kg",
-      img: noname,
+      name: "Raksha",
+      subtitle: "Multiple Business owner",
+      result: "Lost 8 kgs 10 weeks",
+      img: raksha,
       watermark: "@Healthynation",
     },
+    
   ];
 
   return (

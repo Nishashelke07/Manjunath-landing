@@ -4,7 +4,7 @@ export default function TestimonialCard({ t }) {
     <div className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm">
       <div className="relative">
         <img
-          src={t.img}
+          src={t.src || t.img}
           alt={`${t.name} transformation`}
           className="h-64 sm:h-72 md:h-80 w-full object-cover"
           loading="lazy"

@@ -18,7 +18,6 @@ export default function HealthyNationStickyStack() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 text-center">
-
         {/* ================= SECTION 1 — PROBLEM ================= */}
         <motion.div
           variants={fadeUp}
@@ -44,25 +43,27 @@ export default function HealthyNationStickyStack() {
             </p>
 
             <motion.ul
-  className="flex flex-col md:flex-row gap-4 pl-4 text-xl font-semibold"
-
-  variants={stagger}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
->
-  {[
-    "Metabolism is slower",
-    "Joints are under constant stress",
-    "Recovery is poor",
-    "Fat sticks easily",
-  ].map((item, i) => (
-    <motion.li key={i} variants={fadeUp} className="whitespace-nowrap">
-      • {item}
-    </motion.li>
-  ))}
-</motion.ul>
-
+              className="flex flex-col md:flex-row gap-4 pl-4 text-xl font-semibold"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {[
+                "Metabolism is slower",
+                "Joints are under constant stress",
+                "Recovery is poor",
+                "Fat sticks easily",
+              ].map((item, i) => (
+                <motion.li
+                  key={i}
+                  variants={fadeUp}
+                  className="whitespace-nowrap"
+                >
+                  • {item}
+                </motion.li>
+              ))}
+            </motion.ul>
 
             <p className="font-semibold text-gray-900">
               Same diet. Same workout. Same rules.
