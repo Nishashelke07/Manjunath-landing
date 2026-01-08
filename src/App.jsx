@@ -33,6 +33,8 @@ function App() {
         <CallToActionButton />
         <TestimonialsSection />
         <MeetYourMentor />
+        <CoachBackground/>
+
         
         {/* <NewspaperMarquee /> */}
         {/* <WhatsAppProofWall /> */}
@@ -42,7 +44,7 @@ function App() {
         {/* <WhyHealthyNation /> */}
         {/* <VideoTestimonialsSection /> */}
         {/* <HealthyNationTeam /> */}
-        <CoachBackground/>
+       
         <ContactFooter />
       </div>
 

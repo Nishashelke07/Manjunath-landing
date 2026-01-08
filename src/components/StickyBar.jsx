@@ -51,7 +51,7 @@ const StickyBar = () => {
       <div className="px-4 py-2 lg:px-20">
         <p className="text-center text-xs sm:text-sm font-semibold text-gray-800">
           Limited Slots Only !{" "}
-          <span className="text-orange-600">- 80% Exclusive Discount</span>
+         
         </p>
       </div>
     </div>

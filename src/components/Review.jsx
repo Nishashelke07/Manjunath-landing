@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const AnimatedNumber = ({ value, duration = 2 }) => {
@@ -33,14 +33,18 @@ const Review = () => {
           shadow-[0_8px_24px_rgba(0,0,0,0.15)]
           text-center sm:text-left
         "
-      
       >
-        {/* Star */}
-        <Star
-          className="text-yellow-600 fill-yellow-400 shrink-0"
-          size={16}
-          strokeWidth={2.2}
-        />
+        {/* ⭐ Star + Experience */}
+        <div className="flex items-center gap-1 whitespace-nowrap">
+          <Star
+            className="text-yellow-600 fill-yellow-400 shrink-0"
+            size={16}
+            strokeWidth={2.2}
+          />
+          <span className="font-medium text-xs sm:text-sm text-black">
+            <AnimatedNumber value={10} /> Years Experience
+          </span>
+        </div>
 
         {/* Content */}
         <div
@@ -53,10 +57,6 @@ const Review = () => {
             text-black
           "
         >
-          <span className="font-medium whitespace-nowrap">
-            <AnimatedNumber value={10} /> Years Experience
-          </span>
-
           <span className="hidden sm:inline mx-1">•</span>
 
           <span className="whitespace-nowrap">

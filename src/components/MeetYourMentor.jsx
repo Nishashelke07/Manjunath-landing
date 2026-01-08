@@ -67,7 +67,7 @@ export default function MeetYourMentor() {
                 Meet your coach
               </p>
 
-              <h4 className="mt-3 text-3xl md:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h4 className=" text-center mt-3 text-3xl md:text-3xl font-extrabold text-gray-900 leading-tight">
                 Helping Men Over 30 Fix Fat Gain{" "}
                 <span className="text-orange-600">Not Just Lose Weight</span>
               </h4>

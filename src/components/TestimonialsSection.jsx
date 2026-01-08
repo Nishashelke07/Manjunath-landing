@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
       subtitle: "Software Engineer • Age 39",
       result: "Lost 16 kgs in 20 weeks",
       img: Sandeep,
-      watermark: "@Healthynation",
+      
      
     },
     {
@@ -33,49 +33,49 @@ export default function TestimonialsSection() {
       subtitle: "CTO • Age 35",
       result: "Lost 9 kgs & Gained 5kg muscle in 8 weeks",
       img: Naushad,
-      watermark: "@Healthynation",
+      
     },
     {
       name: "Manoj ",
       subtitle: "Lawyer • Age 29",
       result: "Lost 10 kgs in 10 weeks",
       img: Manoj,
-      watermark: "@Healthynation",
+      
     },
     {
       name: "Ayush",
       subtitle: "Buisnees Owner • Age 30 ",
       result: "Lost 11 kgs in 16 weeks",
       img: Ayush,
-      watermark: "@Healthynation",
+     
     },
     {
       name: "Keerthi",
       subtitle: "Government Job • Age 37",
       result: "Lost 19 kgs in 18 weeks",
       img: Keerthi,
-      watermark: "@Healthynation",
+      
     },
     {
       name: "Vinay",
       subtitle: "Bankerr • Age 41",
       result: "Lost 11 kgs in 12 weeks",
       img: vinay,
-      watermark: "@Healthynation",
+      
     },
     {
       name: "Richard",
       subtitle: "Buisness Owner • Age 41" ,
       result: "Lost 5 kgs in 6weeks",
       img: richard,
-      watermark: "@Healthynation",
+      
     },
     {
       name: "Raksha",
       subtitle: "Multiple Business owner",
       result: "Lost 8 kgs 10 weeks",
       img: raksha,
-      watermark: "@Healthynation",
+     
     },
     
   ];
