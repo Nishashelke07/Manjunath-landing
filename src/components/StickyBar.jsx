@@ -1,6 +1,6 @@
 import React from "react";
 
-const CALENDLY_URL = "https://calendly.com/healthynation1008/talk-with-expert";
+const CALENDLY_URL = "https://cal.com/manjunath-getfitwithmac/manjunath-1-on-1-personalized-fitness-call-with-fitbharat";
 
 const StickyBar = () => {
   const handleClick = (e) => {
@@ -27,18 +27,18 @@ const StickyBar = () => {
         <button
           onClick={handleClick}
           className="
-    w-full              /* Mobile: 100% */
-    lg:w-[40%]          /* Desktop: 60% */
-    mx-auto             /* Center on desktop */
-    bg-orange-600 text-white
-    font-semibold
-    text-sm sm:text-base md:text-lg
-    rounded-3xl
-    shadow-lg
-    transition
-    py-3
-    block
-  "
+              w-full              /* Mobile: 100% */
+              lg:w-[40%]          /* Desktop: 60% */
+              mx-auto             /* Center on desktop */
+              bg-orange-600 text-white
+              font-semibold
+              text-sm sm:text-base md:text-lg
+              rounded-3xl
+              shadow-lg
+              transition
+              py-3
+              block cursor-pointer
+            "
         >
           Talk With Expert
         </button>

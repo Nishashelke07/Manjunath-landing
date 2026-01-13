@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 
 const CALENDLY_URL =
-  "https://calendly.com/healthynation1008/talk-with-expert";
+  "https://cal.com/manjunath-getfitwithmac/manjunath-1-on-1-personalized-fitness-call-with-fitbharat";
+
 
 export default function CallToActionButton() {
   const handleClick = (e) => {

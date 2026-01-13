@@ -16,9 +16,9 @@ const certificates = [
 
 const CoachBackground = () => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-10 pb-14 text-center">
+    <div className="mx-auto max-w-5xl px-4 pt-10 pb-14">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="mb-6 flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
             Coach Background
@@ -39,20 +39,27 @@ const CoachBackground = () => {
             className="rounded-2xl border border-gray-200 bg-white shadow-sm"
           >
             {/* Image */}
-            <div className="flex items-center justify-center rounded-t-2xl bg-gray-50 p-4">
-              <img
-                src={item.img}
-                alt={`Certificate ${item.id}`}
-                className="h-32 w-auto object-contain"
-              />
-            </div>
+            <a
+              href={item.img}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <div className="flex cursor-pointer items-center justify-center rounded-t-2xl bg-gray-50 p-4 hover:bg-gray-100 transition">
+                <img
+                  src={item.img}
+                  alt={`Certificate ${item.id}`}
+                  className="h-42 w-auto object-cover"
+                />
+              </div>
+            </a>
 
             {/* Content */}
-            <div className="p-4 text-left">
-              <p className="font-medium text-gray-900 truncate">
+            <div className="p-4 text-center">
+              <p className="truncate font-medium text-gray-900">
                 Certification {item.id}
               </p>
-              <p className="text-sm text-gray-500">Click to preview</p>
+              <p className="text-xs text-gray-500">Click to view</p>
             </div>
           </div>
         ))}

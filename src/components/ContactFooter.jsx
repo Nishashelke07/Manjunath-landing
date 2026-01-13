@@ -1,3 +1,5 @@
+import CallToActionButton from "./CallToActionButton";
+
 const ContactFooter = () => {
 
     return (
@@ -25,9 +27,7 @@ const ContactFooter = () => {
   
           {/* CTA */}
           <div className="mt-10">
-            <button className="px-10 py-4 bg-orange-600 text-white text-lg font-semibold rounded-2xl shadow-md hover:bg-orange-500 hover:shadow-lg transition duration-300">
-              Book Your 1:1 Fat-Loss Strategy Call
-            </button>
+            <CallToActionButton />
   
             <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-gray-600">
               On the call, your lifestyle, metabolism, and routine will be assessed
