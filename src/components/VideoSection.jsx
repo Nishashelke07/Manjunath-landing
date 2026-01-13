@@ -1,9 +1,7 @@
 // VideoSection.jsx
 import React from "react";
-// import vslVideo from "../assets/vsl.mp4";
 import vslPic from '../assets/vsl.jpeg';
 import { motion } from "framer-motion";
-
 
 const imageAnim = {
   hidden: { opacity: 0, scale: 0.96 },
@@ -31,15 +29,6 @@ export default function VideoSection() {
               className="w-full h-96 sm:h-112 md:h-full object-contain md:rounded-l-none md:rounded-r-3xl"
             />
           </motion.div>
-    {/* <video
-      className="w-full h-full rounded-lg shadow-lg bg-black"
-      src={vslVideo}
-      controls
-      autoPlay
-      muted
-      playsInline
-      preload="metadata"
-    /> */}
   </div>
 </section>
 

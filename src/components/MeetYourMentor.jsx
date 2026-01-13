@@ -33,8 +33,8 @@ const imageAnim = {
 
 export default function MeetYourMentor() {
   return (
-    <section className="relative bg-white py-4 px-6 md:px-12 lg:px-24">
-      <div className="mt-3 max-w-7xl mx-auto border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
+    <section className="relative bg-white py-4 px-6 md:px-16 lg:px-24">
+      <div className="mt-3 max-w-6xl mx-auto border border-gray-200 rounded-3xl shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
 
           {/* Image */}
@@ -47,7 +47,7 @@ export default function MeetYourMentor() {
           >
             <img
               src={mentorImg}
-              alt="Sourav Mishra - Coach"
+              alt="Manjunath - Coach"
               className="w-full h-96 sm:h-112 md:h-full object-contain md:rounded-l-none md:rounded-r-3xl"
             />
           </motion.div>
@@ -173,7 +173,7 @@ export default function MeetYourMentor() {
               whileHover={{ scale: 1.04 }}
               className="mt-10"
             >
-              <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 transition">
+              <button className="px-10 py-3 bg-orange-600 text-white font-semibold rounded-xl shadow-md hover:bg-orange-500 transition">
                 Start Your Fitness Journey
               </button>
             </motion.div>
